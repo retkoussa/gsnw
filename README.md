@@ -44,7 +44,7 @@ python gsnw.py <search_query> [output_file] [-silent]
 -silent: (Optional) Suppress the banner.
 ```
 
-# Example ⚡
+## Example ⚡
 
 ```sh
 python script.py sapmai output.txt -silent
