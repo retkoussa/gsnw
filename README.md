@@ -50,7 +50,7 @@ python gsnw.py <search_query> [output_file] [-silent]
 python script.py sapmai output.txt -silent
 ```
 
-This will search for "admin" in GitHub code and save the results to output.txt without displaying the banner.
+This will search for "sapmai" in GitHub code and save the results to output.txt without displaying the banner.
 
 
 ## Important Notes 🪄
