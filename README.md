@@ -21,7 +21,13 @@ This script automates the process of fetching potential file and directory names
 ## Installation 🏢
 
 1. Clone the repository or download the script.
-2. Install the required Python packages:
+2. Create a virtual environment
+```
+python -m venv .venv
+.venv\Scripts\Activate
+```
+
+3. Install the required Python packages:
 
     ```sh
     pip install -r requirements.txt
@@ -29,10 +35,15 @@ This script automates the process of fetching potential file and directory names
     or
 
     ```sh
-    pip install chromedriver-autoinstaller selenium selenium-wire
+    pip install chromedriver-autoinstaller selenium selenium-wire blinker==1.4 setuptools
     ```
 
 ## Usage 🛠️
+Currently tested on windows only.
+
+### Important
+> Make sure you have ALL chrome instances CLOSED.
+
 
 ```sh
 python gsnw.py <search_query> [output_file] [-silent]

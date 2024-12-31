@@ -1,2 +1,4 @@
+blinker==1.4
+setuptools
 selenium-wire
 chromedriver-autoinstaller
