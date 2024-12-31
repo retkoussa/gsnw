@@ -70,20 +70,24 @@ def search_github(query):
         try:
             # Wait until the elements are located or timeout after 10 seconds
             elements = WebDriverWait(driver, 10).until(
-                EC.presence_of_all_elements_located((By.CLASS_NAME, "Link__StyledLink-sc-14289xe-0"))
+                EC.presence_of_all_elements_located((By.CLASS_NAME, "prc-Link-Link-85e08"))
             )
 
-            for element in elements:
-                try:
-                    path = element.text
-                    segments = path.split('/')
-                    for segment in segments:
-                        if query.lower() in segment.lower() and segment not in matched_words:
-                            print(f"\t[x] {segment}")
-                            matched_words.add(segment)
+            if elements:
+                for element in elements:
+                    try:
+                        path = element.text
+                        segments = path.split('/')
+                        for segment in segments:
+                            if query.lower() in segment.lower() and segment not in matched_words:
+                                print(f"\t[x] {segment}")
+                                matched_words.add(segment)
 
-                except StaleElementReferenceException:
-                    print("Encountered a stale element, continuing...")
+                    except StaleElementReferenceException:
+                        print("Encountered a stale element, continuing...")
+            else:
+                print(f"Error: No elements found on page {page_number}")
+                break
 
             # Check if there are no results for the next page
             no_results_message = driver.find_elements(By.XPATH, "//h3[contains(text(), 'Your search did not match any')]")
